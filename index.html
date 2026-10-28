@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a31">
+  <title>The Spoon Alliance</title>
+  <link rel="stylesheet" href="web/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">A tiny heroic adventure</p>
+        <h1>THE <span>SPOON</span> ALLIANCE</h1>
+      </div>
+      <div class="top-actions">
+        <button id="soundBtn" class="small-button" type="button" aria-pressed="false">Sound: Off</button>
+        <button id="pauseBtn" class="small-button" type="button">Pause</button>
+      </div>
+    </header>
+
+    <section class="game-layout" aria-label="Game">
+      <div class="game-frame">
+        <canvas id="game" width="960" height="600" aria-label="The Spoon Alliance game area"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="panel">
+            <p class="eyebrow">The cutlery kingdom needs you</p>
+            <h2 id="overlayTitle">Pick up your spoon.</h2>
+            <p id="overlayText">The Fork Legion is marching. Defeat the bosses, collect shiny spoons, and save the pantry.</p>
+            <button id="startBtn" class="primary-button" type="button">Start Adventure</button>
+          </div>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <section class="stat-card">
+          <div class="stat-head"><span>HERO</span><span id="heroLevel">LEVEL 1</span></div>
+          <div class="hero-name">Spoon Knight</div>
+          <div class="meter-label"><span>Health</span><span id="healthText">100 / 100</span></div>
+          <div class="meter"><div id="healthBar" class="meter-fill health-fill"></div></div>
+          <div class="meter-label"><span>Stamina</span><span id="staminaText">100 / 100</span></div>
+          <div class="meter"><div id="staminaBar" class="meter-fill stamina-fill"></div></div>
+          <div class="coin-line"><span>✦ Spoon shards</span><strong id="shards">0</strong></div>
+          <div class="coin-line"><span>⚔ Bosses defeated</span><strong id="bossCount">0 / 8</strong></div>
+        </section>
+        <section class="stat-card boss-card">
+          <div class="stat-head"><span>CURRENT THREAT</span><span id="bossStage">—</span></div>
+          <h3 id="bossName">No boss yet</h3>
+          <p id="bossDesc">Start your adventure to meet your first enemy.</p>
+          <div class="meter-label"><span>Boss health</span><span id="bossHealthText">—</span></div>
+          <div class="meter boss-meter"><div id="bossHealthBar" class="meter-fill boss-fill"></div></div>
+        </section>
+        <section class="stat-card controls-card">
+          <div class="stat-head"><span>CONTROLS</span><span class="key-hint">KEYBOARD</span></div>
+          <div class="control-row"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Move</span></div>
+          <div class="control-row"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd><span>Move</span></div>
+          <div class="control-row"><kbd>SPACE</kbd><span>Swipe spoon</span></div>
+          <div class="control-row"><kbd>SHIFT</kbd><span>Dash</span></div>
+          <div class="control-row"><kbd>ESC</kbd><span>Pause</span></div>
+        </section>
+        <button id="restartBtn" class="restart-button" type="button">Restart run</button>
+      </aside>
+    </section>
+    <footer>
+      <span>One spoon. Eight bosses. Absolutely no forks.</span>
+      <span id="statusText">Ready when you are.</span>
+    </footer>
+  </main>
+  <script src="web/game.js"></script>
+</body>
+</html>
