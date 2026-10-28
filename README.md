@@ -1,2 +1,0 @@
-# Spoon-alliance
-Spoon
